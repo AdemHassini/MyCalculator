@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="15dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultShow"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/result_show"
+        android:paddingTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/formula"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:fontFamily="@font/zorque"
+            android:letterSpacing="0.05"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/main_blue"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/resultShow"
+            app:layout_constraintStart_toStartOf="@id/resultShow"
+            app:layout_constraintTop_toTopOf="@id/resultShow"
+            android:autofillHints="Error"
+            android:focusableInTouchMode="false"
+            />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/zorque"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:maxLines="1"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:textColor="@color/main_blue"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@id/resultShow"
+            app:layout_constraintEnd_toEndOf="@id/resultShow"
+            app:layout_constraintStart_toStartOf="@id/resultShow"
+            app:layout_constraintTop_toBottomOf="@+id/formula" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/highLine"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultShow"
+        >
+
+        <TextView
+            android:id="@+id/btnPlusOrMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_pop_up"
+            app:layout_constraintStart_toStartOf="@id/highLine"
+            app:layout_constraintTop_toBottomOf="@id/highLine"
+            app:layout_constraintTop_toTopOf="@id/highLine"
+            android:text="+/-"
+            android:textColor="@color/white"
+            android:fontFamily="@font/zorque"
+            android:gravity="center"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/btnEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grey_result"
+            app:layout_constraintBottom_toBottomOf="@id/highLine"
+            app:layout_constraintEnd_toStartOf="@+id/btnDot"
+            app:layout_constraintStart_toEndOf="@id/btnPlusOrMinus"
+            app:layout_constraintTop_toTopOf="@id/highLine"
+            app:layout_constraintVertical_bias="0.0"
+            android:text="="
+            android:textColor="@color/main_blue"
+            android:fontFamily="@font/zorque"
+            android:gravity="center"
+            android:textSize="35sp"
+            />
+
+        <TextView
+            android:id="@+id/btnDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/right_pop_up"
+            app:layout_constraintBottom_toBottomOf="@id/highLine"
+            app:layout_constraintEnd_toEndOf="@id/highLine"
+            app:layout_constraintTop_toTopOf="@id/highLine"
+            android:text=","
+            android:textColor="@color/white"
+            android:fontFamily="@font/zorque"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:paddingBottom="10dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/highLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/grey_rectangle"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/keyBoardRowOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/table"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+
+
+            >
+
+            <TextView
+                android:id="@+id/btnEight"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toStartOf="@id/keyBoardRowOne"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowOne"
+                app:layout_constraintEnd_toStartOf="@id/btnNine"
+                android:text="8"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"
+                />
+            <TextView
+                android:id="@+id/btnNine"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toEndOf="@id/btnEight"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowOne"
+                app:layout_constraintEnd_toStartOf="@id/btnPercent"
+                android:text="9"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"
+
+                />
+            <TextView
+                android:id="@+id/btnPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toEndOf="@id/btnNine"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowOne"
+                app:layout_constraintEnd_toStartOf="@id/btnClear"
+                android:text="%"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="33sp"
+                />
+
+            <TextView
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/red_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnPercent"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowOne"
+                android:text="C"
+                android:textColor="@color/main_red"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/keyBoardRowTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/keyBoardRowOne"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+
+            >
+
+            <TextView
+                android:id="@+id/btnFour"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toStartOf="@id/keyBoardRowTwo"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowTwo"
+                app:layout_constraintEnd_toStartOf="@id/btnFive"
+                android:text="4"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"
+                />
+            <TextView
+                android:id="@+id/btnFive"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toEndOf="@id/btnFour"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowTwo"
+                app:layout_constraintEnd_toStartOf="@id/btnSix"
+                android:text="5"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"
+
+                />
+            <TextView
+                android:id="@+id/btnSix"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toEndOf="@id/btnFive"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowTwo"
+                app:layout_constraintEnd_toStartOf="@id/btnSeven"
+                android:text="6"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"
+                />
+
+            <TextView
+                android:id="@+id/btnSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnSix"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowTwo"
+                android:text="7"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/keyBoardRowThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/keyBoardRowTwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+
+            >
+
+            <TextView
+                android:id="@+id/btnZero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toStartOf="@id/keyBoardRowThree"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowThree"
+                app:layout_constraintEnd_toStartOf="@id/btnOne"
+                android:text="0"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"
+
+                />
+            <TextView
+                android:id="@+id/btnOne"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toEndOf="@id/btnZero"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowThree"
+                app:layout_constraintEnd_toStartOf="@id/btnTwo"
+                android:text="1"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"
+
+
+                />
+            <TextView
+                android:id="@+id/btnTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintStart_toEndOf="@id/btnOne"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowThree"
+                app:layout_constraintEnd_toStartOf="@id/btnThree"
+                android:text="2"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"
+                />
+
+            <TextView
+                android:id="@+id/btnThree"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_white_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnTwo"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowThree"
+                android:text="3"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/keyBoardRowFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/keyBoardRowThree"
+            app:layout_constraintBottom_toBottomOf="@id/table"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+
+            >
+
+            <TextView
+                android:id="@+id/btnDiv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/blue_circle"
+                app:layout_constraintStart_toStartOf="@id/keyBoardRowFour"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowFour"
+                app:layout_constraintEnd_toStartOf="@id/btnMultiply"
+                android:text="/"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="28sp"
+                />
+            <TextView
+                android:id="@+id/btnMultiply"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/blue_circle"
+                app:layout_constraintStart_toEndOf="@id/btnDiv"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowFour"
+                app:layout_constraintEnd_toStartOf="@id/btnMinus"
+                android:text="x"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="25sp"
+                />
+            <TextView
+                android:id="@+id/btnMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/blue_circle"
+                app:layout_constraintStart_toEndOf="@id/btnMultiply"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowFour"
+                app:layout_constraintEnd_toStartOf="@id/btnPlus"
+                android:text="-"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="33sp"
+
+                />
+
+            <TextView
+                android:id="@+id/btnPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/blue_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnMinus"
+                app:layout_constraintTop_toTopOf="@id/keyBoardRowFour"
+                android:text="+"
+                android:textColor="@color/main_blue"
+                android:fontFamily="@font/zorque"
+                android:gravity="center"
+                android:textSize="30sp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lowLine"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/table"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/btnLeftPar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_pop_up"
+            android:fontFamily="@font/zorque"
+            android:gravity="center"
+            android:text="("
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@id/lowLine"
+            app:layout_constraintTop_toBottomOf="@id/lowLine"
+            app:layout_constraintTop_toTopOf="@id/lowLine" />
+
+        <TextView
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_btndelete"
+            app:layout_constraintBottom_toBottomOf="@id/lowLine"
+            app:layout_constraintEnd_toStartOf="@+id/btnRightPar"
+            app:layout_constraintStart_toEndOf="@id/btnLeftPar"
+            app:layout_constraintTop_toTopOf="@id/lowLine" />
+
+        <TextView
+            android:id="@+id/btnRightPar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/right_pop_up"
+            android:fontFamily="@font/zorque"
+            android:gravity="center"
+            android:text=")"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@id/lowLine"
+            app:layout_constraintEnd_toEndOf="@id/lowLine"
+            app:layout_constraintTop_toTopOf="@id/lowLine"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
